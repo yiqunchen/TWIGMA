@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!-- Authors: Yiqun T. Chen, James Zou --> 
+<!-- Largely based on the work of Roxana Daneshjou, Mert Yuksekgonul, James Zou -->
+<html lang="en">
+<head>
+  <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.7.16">
+  <meta charset="utf-8">
+  <title>SKINCON</title>
+  <meta name="description" content="TWIGMA: A dataset of AI-Generated Images with Metadata From Twitter."><!--#include file="lagunita.html" -->
+  <!--Lagunita Theme (TODO: Server side include)-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="lagunita/css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="lagunita/css/base.min.css?v=0.1" type="text/css">
+  <link rel="stylesheet" href="lagunita/css/custom.css?v=0.1" type="text/css">
+  <!--End Lagunita Theme-->
+  <link rel="icon" type="image/ico" href="favicon.ico">
+</head>
+<body class="site-slogan">
+  <!--#include file="header.html" -->
+  <!--Header (TODO: Server side include)-->
+  <div id="top">
+    <div class="container">
+      <!--=== Skip links ===-->
+      <div id="skip">
+        <a href="#content" onclick="$('#content').focus()">Skip to content</a>
+      </div><!-- /Skip links -->
+    </div>
+  </div>
+  <div id="brandbar">
+    <div class="container">
+      <a href="http://www.stanford.edu"><img src="lagunita/images/brandbar-stanford-logo%402x.png" alt="Stanford University" width="152" height="23"></a>
+    </div><!-- .container end -->
+  </div>
+  <div id="header" class="clearfix" role="banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <div id="signature">
+            <div id="site-name">
+              <a href="https://skincon-dataset.github.io/index.html"><span id="site-name-1">SKIN Concepts Dataset</span></a>
+            </div>
+            <div id="site-slogan">
+              <a href="https://skincon-dataset.github.io/index.html"><span id="site_slogan">A skin disease dataset densely annotated by domain experts for fine-grained model debugging and analysis.</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- Menu -->
+  <div id="mainmenu" class="clearfix" role="navigation">
+    <div class="container">
+      <div class="navbar navbar-default">
+        <!-- main navigation -->
+         <button type="button" class="navbar-toggle btn-navbar" data-toggle="collapse" data-target=".navbar-collapse"> <span class="menu-text">Menu</span></button> <!-- /nav-collapse -->
+        <div class="navbar-collapse collapse">
+          <div role="navigation">
+            <div id="primary-nav">
+              <ul class="nav navbar-nav" aria-label="primary navigation">
+                <li id="nav-1">
+                  <a href="index.html">Home</a>
+                </li>
+                <li id="nav-2">
+                  <a href="index.html#intro">Introduction</a>
+                </li>
+                <li id="nav-3">
+                  <a href="index.html#dataset">Dataset</a>
+                </li>
+                <!--<li id="nav-4">
+                  <a href="index.html#dataset">Dataset</a>
+                </li>
+                <li id="nav-5">
+                <a href="index.html#code">Code</a>-->
+                <!--</li>
+                <li id="nav-6">
+                  <a href="index.html#access">Accessing Dataset</a>
+                </li>
+                <li id="nav-7">
+                  <a href="index.html#paper">Paper</a>
+                </li>-->
+              </ul>
+            </div>
+          </div>
+        </div><!-- /nav-collapse -->
+      </div><!-- /navbar -->
+    </div><!-- /container -->
+  </div><!-- /mainmenu -->
+  <!--End Header-->
+  <div id="intro" class="container" role="introduction" tabindex="0">
+    <h2>Introduction</h2>
+    <p>Recent progress in generative artificial intelligence (gen-AI) has enabled the generation of photo-realistic and artistically-inspiring photos at a single click, catering to millions of users online. To explore how people use gen-AI models such as DALLE and StableDiffusion, it is critical to understand the themes, contents, and variations present in the AI-generated photos. In this work, we introduce TWIGMA (TWItter Generative-ai images with Metadata Annotations), a comprehensive dataset encompassing 800,000 gen-AI images collected from Jan 2021 to March 2023 on Twitter, with associated metadata (e.g., tweet text, creation date, number of likes). Through a comparative analysis of TWIGMA with natural images and human artwork, we find that gen-AI images possess distinctive characteristics and exhibit, on average, lower variability when compared to their non-gen-AI counterparts. Additionally, we find that the similarity between a gen-AI image and human images (i) is correlated with the number of likes; and (ii) can be used to identify human images that served as inspiration for the gen-AI creations. Finally, we observe a longitudinal shift in the themes of AI-generated images on Twitter, with users increasingly sharing artistically sophisticated content such as intricate human portraits, whereas their interest in simple subjects such as natural scenes and animals has decreased. Our analyses and findings underscore the significance of TWIGMA as a unique data resource for studying AI-generated images.</p><br>
+    <p><img class="center" loading="lazy" width="500" src="files/figure1.png">
+    <!--<p><img class="center" loading="lazy" width="500" src="media/JAMA_derm_diverse.png">-->
+    <p><h2 id="dataset">Dataset</h2>
+    We base our dataset on two prior datasets.  <br>
+    To get access to Fitzpatrick17k images, please visit <a href="https://github.com/mattgroh/fitzpatrick17k">Fitzpatrick17k website.</a>
+    <a href="./files/annotations_fitzpatrick17k.csv" download='image' class="download-btn">Download SKINCON Fitzpatrick17k annotations by clicking here.
+        <i class="fa fa-download"></i>
+    </a>
+
+    <br> <br>
+    To get access to DDI images, please visit <a href="https://ddi-dataset.github.io/">DDI website.</a>
+    <a href="./files/annotations_ddi.csv" download='image' class="download-btn">Download SKINCON DDI annotations by clicking here.
+        <i class="fa fa-download"></i>
+    </a>
+    </div>
+  <!--Lagunita Theme (TODO: Server side include)-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="lagunita/js/modernizr.custom.17475.js"></script>
+  <script src="lagunita/js/bootstrap.min.js"></script>
+  <script src="lagunita/js/base.js?v=1.0"></script>
+  <script src="lagunita/js/custom.js"></script>
+  <!--End Lagunita Theme-->
+</body>
+</html>
