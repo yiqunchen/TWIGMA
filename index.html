@@ -92,6 +92,7 @@
     <p><img class="center" loading="lazy" width="1000" src="files/figure1.png">
     <!--<p><img class="center" loading="lazy" width="500" src="media/JAMA_derm_diverse.png">-->
     <p><h2 id="dataset">Dataset</h2>
+  <b> You can find a more interactive introduction and exploration of our dataset at <a href="https://huggingface.co/spaces/yiquntchen/TWIGMA">https://huggingface.co/spaces/yiquntchen/TWIGMA</a></b>
       Note that in accordance with the privacy and control policy of Twitter, no raw content from Twitter is included in this dataset and users could and need to retrieve the original Twitter content used for analysis using the Twitter id. Therefore, we include the following fields in TWIGMA:
       <ul>
   <li>id: This is the Twitter id uniquely identifying each tweet used in this dataset and our analysis;</li>
@@ -116,20 +117,18 @@
   <li> UMAP_dim_2: The second dimension for a two-dimensional UMAP projection of the CLIP-ViT-L-14 embeddings of the images in TWIGMA.
 </li>
 </ul>
-  <b> You can find a more interactive introduction and exploration of our dataset at https://huggingface.co/spaces/yiquntchen/TWIGMA.</b>
-
-    <h3>Safety Note: </h3>
-    It is important to note that <i>a substantial amount</i> of images have been classified as NSFW (not-safe-for-work, e.g., violent, pornographic, nude content) by both Twitter and a CLIP-based-NSFW model. We did not exclude these data not only due to their volume, but also because our work intends to understand the content and themes <b>without filtering </b>. Therefore, we included two fields in the final TWIGMA dataset (possibly_sensitive and nsfw_score to help filter out these images. Additionally, we note that the NSFW contents vary quite a bit by cluster labels and two of the clusters contain primarily NSFW contents.
-
    <!--  We base our dataset on two prior datasets.  <br>
     To get access to Fitzpatrick17k images, please visit <a href="https://github.com/mattgroh/fitzpatrick17k">Fitzpatrick17k website.</a>
     <a href="./files/annotations_fitzpatrick17k.csv" download='image' class="download-btn">Download SKINCON Fitzpatrick17k annotations by clicking here.
         <i class="fa fa-download"></i>
     </a> -->
-    <b>Link to the dataset hosted on zenodo:</b>: <a href="https://doi.org/10.5281/zenodo.8031785"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.8031785.svg" alt="DOI"></a> 
+    <b>Link to the dataset hosted on zenodo:</b> <a href="https://doi.org/10.5281/zenodo.8031785"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.8031785.svg" alt="DOI"></a> 
 
-    <h3>Disclaimer: </h3>
-    Please be advised that this function has been developed in compliance with the Twitter policy of data usage and sharing. The use of this function is solely at your own risk and should be consistent with applicable laws, regulations, and ethical considerations. If you wish to review the original Twitter post, you should access the source page directly on Twitter and fully comply with the rules and regulations closely at the official Twitter developer policy at https://developer.twitter.com/en/developer-terms/policy.  
+
+    <h2>Safety note and disclaimer: </h2>
+    <p>It is important to note that <i>a substantial amount</i> of images have been classified as NSFW (not-safe-for-work, e.g., violent, pornographic, nude content) by both Twitter and a CLIP-based-NSFW model. We did not exclude these data not only due to their volume, but also because our work intends to understand the content and themes <b>without filtering </b>. Therefore, we included two fields in the final TWIGMA dataset (possibly_sensitive and nsfw_score to help filter out these images. Additionally, we note that the NSFW contents vary quite a bit by cluster labels and two of the clusters contain primarily NSFW contents. </p>
+
+    <p> Please be advised that this function has been developed in compliance with the Twitter policy of data usage and sharing. The use of this function is solely at your own risk and should be consistent with applicable laws, regulations, and ethical considerations. If you wish to review the original Twitter post, you should access the source page directly on Twitter and fully comply with the rules and regulations closely at the official Twitter developer policy at https://developer.twitter.com/en/developer-terms/policy.   </p>
 
     </div>
   <!--Lagunita Theme (TODO: Server side include)-->
