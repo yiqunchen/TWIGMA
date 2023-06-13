@@ -93,13 +93,12 @@
     <!--<p><img class="center" loading="lazy" width="500" src="media/JAMA_derm_diverse.png">-->
     <p><h2 id="dataset">Dataset</h2>
   <b> You can find a more interactive introduction and exploration of our dataset at <a href="https://huggingface.co/spaces/yiquntchen/TWIGMA">https://huggingface.co/spaces/yiquntchen/TWIGMA</a>.</b>
-  
       Note that in accordance with the privacy and control policy of Twitter, no raw content from Twitter is included in this dataset and users could and need to retrieve the original Twitter content used for analysis using the Twitter id. Therefore, we include the following fields in TWIGMA:
       <ul>
-  <li>id: This is the Twitter id uniquely identifying each tweet used in this dataset and our analysis;</li>
-  <li>image_name: This is the media id (see details at the Twitter page) used to uniquely identify each photo. Leveraging this field is necessary since a tweet can contain multiple images;</li>
-  <li>created_at: This is the time of creation corresponding to the Twitter id;</li>
-  <li> like_count: This is the number of likes collected from official Twitter API (snapshot: the week of May 29th). Note that some likes are not available because the corresponding tweets have been deleted since we first downloaded the photos;
+  <li>id: Twitter id uniquely identifying each tweet used in this dataset and our analysis;</li>
+  <li>image_name: Media id (see details at the <a href="https://developer.twitter.com/en/docs/twitter-ads-api/creatives/guides/identifying-media">Twitter page</a>) used to uniquely identify each photo. Leveraging this field is necessary since a tweet can contain multiple images;</li>
+  <li>created_at: Time of creation corresponding to the Twitter id;</li>
+  <li> like_count: Number of likes collected from official Twitter API (snapshot: the week of May 29th). Note that some likes are not available because the corresponding tweets have been deleted since we first downloaded the photos;
 </li>
   <li> quote_count: Same as like_count, but for quotes;
 </li>
@@ -109,9 +108,9 @@
 </li>
   <li> label_10_cluster: This is the assigned k-means cluster (k=10 so this number varies from 1 to 10);
 </li>
-  <li> possibly_sensitive: Binary variable indicating whether the media content has been marked as sensitive/NSFW by Twitter;
+  <li> possibly_sensitive: Binary variable indicating whether the media content has been marked as sensitive content by Twitter;
 </li>
-  <li>nsfw_score: The predicted NSFW from a pre-trained CLIP-based NSFW detector (ranges from 0 to 1; closer to 1 means more likely to be NSFW);
+  <li>nsfw_score: The predicted NSFW score from a pre-trained CLIP-based NSFW detector (ranges from 0 to 1; closer to 1 means more likely to be NSFW);
  </li>
   <li> UMAP_dim_1: The first dimension for a two-dimensional UMAP projection of the CLIP-ViT-L-14 embeddings of the images in TWIGMA.
 </li>
@@ -125,11 +124,9 @@
     </a> -->
     <b>Link to the dataset hosted on zenodo:</b> <a href="https://doi.org/10.5281/zenodo.8031785"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.8031785.svg" alt="DOI"></a> 
 
-
-    <h2>Safety note and disclaimer: </h2>
-    <p>It is important to note that <i>a substantial amount</i> of images have been classified as NSFW (not-safe-for-work, e.g., violent, pornographic, nude content) by both Twitter and a CLIP-based-NSFW model. We did not exclude these data not only due to their volume, but also because our work intends to understand the content and themes <b>without filtering</b>. Therefore, we included two fields in the final TWIGMA dataset (possibly_sensitive and nsfw_score) to help filter out these images. Additionally, we note that the NSFW contents vary quite a bit by cluster labels and two of the clusters contain primarily NSFW contents. </p>
-
-    <p> Please be advised that this function has been developed in compliance with the Twitter policy of data usage and sharing. The use of this function is solely at your own risk and should be consistent with applicable laws, regulations, and ethical considerations. If you wish to review the original Twitter post, you should access the source page directly on Twitter and fully comply with the rules and regulations closely at the official Twitter developer policy at https://developer.twitter.com/en/developer-terms/policy.   </p>
+<h2>Safety Note and Disclaimer:</h2>
+<p>It is important to note that a substantial amount of images in this dataset have been classified as NSFW (not-safe-for-work) by both Twitter and a CLIP-based NSFW model. This includes content that is violent, pornographic, or contains nudity. We have chosen not to exclude these images from the dataset in order to understand the content and themes without filtering. However, we have included two fields in the final TWIGMA dataset, namely "possibly_sensitive" and "nsfw_score," which can be used to filter out these images.</p>
+<p>Please exercise caution and discretion when using this dataset. The development of this dataset has been done in compliance with Twitter's policy on data usage and sharing. The use of this dataset is solely at your own risk and should be in accordance with applicable laws, regulations, and ethical considerations. If you intend to review the original Twitter post, we recommend accessing the source page directly on Twitter and closely adhering to the official Twitter developer policy, available at https://developer.twitter.com/en/developer-terms/policy.</p>
 
     </div>
   <!--Lagunita Theme (TODO: Server side include)-->
