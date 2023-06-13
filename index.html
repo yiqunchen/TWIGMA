@@ -5,7 +5,7 @@
 <head>
   <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.7.16">
   <meta charset="utf-8">
-  <title>SKINCON</title>
+  <title>TWIGMA</title>
   <meta name="description" content="TWIGMA: A dataset of AI-Generated Images with Metadata From Twitter."><!--#include file="lagunita.html" -->
   <!--Lagunita Theme (TODO: Server side include)-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,7 +41,7 @@
               <a href="https://yiqunchen.github.io/TWIGMA/index.html"><span id="site-name-1">TWIGMA Dataset</span></a>
             </div>
             <div id="site-slogan">
-              <a href="https://yiqunchen.github.io/TWIGMA/index.html"><span id="site_slogan">A dataset to understand content, variation, and longitudinal theme shifts of AI-generated images on Twitter.</span></a>
+              <a href="https://yiqunchen.github.io/TWIGMA/index.html"><span id="site_slogan">A dataset to understand content, variation, and temporal changes of AI-generated images on Twitter.</span></a>
             </div>
           </div>
         </div>
@@ -89,14 +89,47 @@
   <div id="intro" class="container" role="introduction" tabindex="0">
     <h2>Introduction</h2>
     <p>Recent progress in generative artificial intelligence (gen-AI) has enabled the generation of photo-realistic and artistically-inspiring photos at a single click, catering to millions of users online. To explore how people use gen-AI models such as DALLE and StableDiffusion, it is critical to understand the themes, contents, and variations present in the AI-generated photos. In this work, we introduce TWIGMA (TWItter Generative-ai images with Metadata Annotations), a comprehensive dataset encompassing 800,000 gen-AI images collected from Jan 2021 to March 2023 on Twitter, with associated metadata (e.g., tweet text, creation date, number of likes). Through a comparative analysis of TWIGMA with natural images and human artwork, we find that gen-AI images possess distinctive characteristics and exhibit, on average, lower variability when compared to their non-gen-AI counterparts. Additionally, we find that the similarity between a gen-AI image and human images (i) is correlated with the number of likes; and (ii) can be used to identify human images that served as inspiration for the gen-AI creations. Finally, we observe a longitudinal shift in the themes of AI-generated images on Twitter, with users increasingly sharing artistically sophisticated content such as intricate human portraits, whereas their interest in simple subjects such as natural scenes and animals has decreased. Our analyses and findings underscore the significance of TWIGMA as a unique data resource for studying AI-generated images.</p><br>
-    <p><img class="center" loading="lazy" width="500" src="files/figure1.png">
+    <p><img class="center" loading="lazy" width="1000" src="files/figure1.png">
     <!--<p><img class="center" loading="lazy" width="500" src="media/JAMA_derm_diverse.png">-->
     <p><h2 id="dataset">Dataset</h2>
+      Note that in accordance with the privacy and control policy of Twitter, no raw content from Twitter is included in this dataset and users could and need to retrieve the original Twitter content used for analysis using the Twitter id. Therefore, we include the following fields in TWIGMA:
+      <ul>
+  <li>id: This is the Twitter id uniquely identifying each tweet used in this dataset and our analysis;</li>
+  <li>image_name: This is the media id (see details at the Twitter page) used to uniquely identify each photo. Leveraging this field is necessary since a tweet can contain multiple images;</li>
+  <li>created_at: This is the time of creation corresponding to the Twitter id;</li>
+  <li> like_count: This is the number of likes collected from official Twitter API (snapshot: the week of May 29th). Note that some likes are not available because the corresponding tweets have been deleted since we first downloaded the photos;
+</li>
+  <li> quote_count: Same as like_count, but for quotes;
+</li>
+  <li> reply_count: Same as like_count, but for replies;
+</li>
+  <li> all_captions: This is the BLIP-generated (Li et al. 2022) captions for the corresponding image;
+</li>
+  <li> label_10_cluster: This is the assigned k-means cluster (k=10 so this number varies from 1 to 10);
+</li>
+  <li> possibly_sensitive: Binary variable indicating whether the media content has been marked as sensitive/NSFW by Twitter;
+</li>
+  <li>nsfw_score: The predicted NSFW from a pre-trained CLIP-based NSFW detector (ranges from 0 to 1; closer to 1 means more likely to be NSFW);
+ </li>
+  <li> UMAP_dim_1: The first dimension for a two-dimensional UMAP projection of the CLIP-ViT-L-14 embeddings of the images in TWIGMA.
+</li>
+  <li> UMAP_dim_2: The second dimension for a two-dimensional UMAP projection of the CLIP-ViT-L-14 embeddings of the images in TWIGMA.
+</li>
+</ul>
+  <b> You can find a more interactive introduction and exploration of our dataset at https://huggingface.co/spaces/yiquntchen/TWIGMA.</b>
+
+    <h3>Safety Note: </h3>
+    It is important to note that <i>a substantial amount</i> of images have been classified as NSFW (not-safe-for-work, e.g., violent, pornographic, nude content) by both Twitter and a CLIP-based-NSFW model. We did not exclude these data not only due to their volume, but also because our work intends to understand the content and themes <b>without filtering </b>. Therefore, we included two fields in the final TWIGMA dataset (possibly_sensitive and nsfw_score to help filter out these images. Additionally, we note that the NSFW contents vary quite a bit by cluster labels and two of the clusters contain primarily NSFW contents.
+
    <!--  We base our dataset on two prior datasets.  <br>
     To get access to Fitzpatrick17k images, please visit <a href="https://github.com/mattgroh/fitzpatrick17k">Fitzpatrick17k website.</a>
     <a href="./files/annotations_fitzpatrick17k.csv" download='image' class="download-btn">Download SKINCON Fitzpatrick17k annotations by clicking here.
         <i class="fa fa-download"></i>
     </a> -->
+    <b>Link to the dataset hosted on zenodo:</b>: <a href="https://doi.org/10.5281/zenodo.8031785"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.8031785.svg" alt="DOI"></a> 
+
+    <h3>Disclaimer: </h3>
+    Please be advised that this function has been developed in compliance with the Twitter policy of data usage and sharing. The use of this function is solely at your own risk and should be consistent with applicable laws, regulations, and ethical considerations. If you wish to review the original Twitter post, you should access the source page directly on Twitter and fully comply with the rules and regulations closely at the official Twitter developer policy at https://developer.twitter.com/en/developer-terms/policy.  
 
     </div>
   <!--Lagunita Theme (TODO: Server side include)-->
