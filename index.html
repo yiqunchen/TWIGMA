@@ -92,7 +92,8 @@
     <p><img class="center" loading="lazy" width="1000" src="files/figure1.png">
     <!--<p><img class="center" loading="lazy" width="500" src="media/JAMA_derm_diverse.png">-->
     <p><h2 id="dataset">Dataset</h2>
-  <b> You can find a more interactive introduction and exploration of our dataset at <a href="https://huggingface.co/spaces/yiquntchen/TWIGMA">https://huggingface.co/spaces/yiquntchen/TWIGMA</a></b>
+  <b> You can find a more interactive introduction and exploration of our dataset at <a href="https://huggingface.co/spaces/yiquntchen/TWIGMA">https://huggingface.co/spaces/yiquntchen/TWIGMA</a>.</b>
+  
       Note that in accordance with the privacy and control policy of Twitter, no raw content from Twitter is included in this dataset and users could and need to retrieve the original Twitter content used for analysis using the Twitter id. Therefore, we include the following fields in TWIGMA:
       <ul>
   <li>id: This is the Twitter id uniquely identifying each tweet used in this dataset and our analysis;</li>
@@ -126,7 +127,7 @@
 
 
     <h2>Safety note and disclaimer: </h2>
-    <p>It is important to note that <i>a substantial amount</i> of images have been classified as NSFW (not-safe-for-work, e.g., violent, pornographic, nude content) by both Twitter and a CLIP-based-NSFW model. We did not exclude these data not only due to their volume, but also because our work intends to understand the content and themes <b>without filtering </b>. Therefore, we included two fields in the final TWIGMA dataset (possibly_sensitive and nsfw_score to help filter out these images. Additionally, we note that the NSFW contents vary quite a bit by cluster labels and two of the clusters contain primarily NSFW contents. </p>
+    <p>It is important to note that <i>a substantial amount</i> of images have been classified as NSFW (not-safe-for-work, e.g., violent, pornographic, nude content) by both Twitter and a CLIP-based-NSFW model. We did not exclude these data not only due to their volume, but also because our work intends to understand the content and themes <b>without filtering</b>. Therefore, we included two fields in the final TWIGMA dataset (possibly_sensitive and nsfw_score) to help filter out these images. Additionally, we note that the NSFW contents vary quite a bit by cluster labels and two of the clusters contain primarily NSFW contents. </p>
 
     <p> Please be advised that this function has been developed in compliance with the Twitter policy of data usage and sharing. The use of this function is solely at your own risk and should be consistent with applicable laws, regulations, and ethical considerations. If you wish to review the original Twitter post, you should access the source page directly on Twitter and fully comply with the rules and regulations closely at the official Twitter developer policy at https://developer.twitter.com/en/developer-terms/policy.   </p>
 
